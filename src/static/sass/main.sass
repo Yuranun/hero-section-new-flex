@@ -1,0 +1,302 @@
+@import "_libs.sass"
+@import "_vars.scss"
+
+// Шрифты
+@font-face 
+  font-family: sans-serif
+  src: url(../fonts/) format("woff2")
+  src: url(../fonts/) format("woff")
+  src: url(../fonts/) format("truetype")
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: sans-serif
+  src: url(../fonts/) format("woff2")
+  src: url(../fonts/) format("woff")
+  src: url(../fonts/) format("truetype")
+  font-weight: normal
+  font-style: normal
+
+*
+  box-sizing: border-box
+
+body 
+	margin: 0
+	padding: 0
+	font-family: 'Montserrat', sans-serif
+  font-size: 1rem
+  color: #232626
+
+button, input, a, textarea  
+	&:focus 
+		outline: none
+
+a 
+  text-decoration: none
+
+.block
+  display: block
+
+.container
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  padding-left: 15rem
+  padding-right: 5rem
+
+// ------ Шапка ------ 
+.header
+  background: url(../img/header-bg.png) top center no-repeat
+
+// ------ Навигация ------ 
+.nav
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  font-size: 1.8rem
+  padding-top: 4rem
+  &-logo // Логотип
+    display: flex
+    &::before
+      display: flex
+      content: ''
+      width: 1.9rem
+      height: 1.9rem
+      margin-right: 1.5rem
+      background-image: url(../img/four-squares-list.png)
+      background-repeat: no-repeat
+      background-size: cover
+    &::after
+      display: block
+      content: ''
+      position: absolute
+      width: 1px
+      height: 20rem
+      top: 8rem
+      background-color: #39446b  
+  &-login // ------ Вход ------
+    display: flex
+  &-link // ------ ссылки ------
+    display: flex
+    padding: 0 2rem
+    color: #232626
+    &::before
+      display: flex
+      content: ''
+      width: 1.9rem
+      height: 1.9rem
+      margin-right: 1rem
+      background-image: url(../img/shopping-cart.png)
+      background-repeat: no-repeat
+      background-size: cover
+  .shop // ------ смена иконки ссылки ------
+    &::before
+      background-image: url(../img/login.png)
+.ru // ------ Стилизация RU ------
+  display: flex
+  position: relative
+  justify-content: flex-end
+  align-items: flex-end
+  margin-top: -4rem
+  padding: 1rem
+  font-size: 16px
+  color: #b29353
+  text-transform: uppercase
+  background-color: #232626
+
+// ------ Заголовок шапки ------
+.header-title
+  padding-top: 25rem
+  font-size: 3.6rem
+  text-transform: uppercase
+  font-weight: bold
+// ------ Меню шапки ------
+.menu
+  display: flex
+  position: relative
+  list-style-type: none
+  padding: 0
+  &-link // ------ ссылки меню ------
+    display: flex
+    font-size: 1.2rem
+    color: #232626
+    padding-right: 1rem
+    &::after
+      margin-top: 0.6rem
+      margin-left: 1rem
+      content: ''
+      width: 5px
+      height: 5px
+      background-color: #b29353
+// ------ Вертикальный текст: Листайте вниз ------
+.scrolldown
+  display: flex
+  font-size: 1.4rem
+  color: #b29353
+  text-transform: uppercase
+  transform: rotate(-90deg)
+  position: absolute
+  right: 1rem
+  letter-spacing: 1.4px
+  &::before
+    position: absolute
+    display: flex
+    content: ''
+    width: 2px
+    height: 86px
+    transform: rotate(-90deg)
+    background-color: #b29353
+// ------ Вертикальный текст: Новости ------
+.transparent
+  font-size: 7rem
+  font-weight: 700
+  text-transform: uppercase
+  opacity: 0.15
+  transform: rotate(-90deg)
+  position: absolute
+  top: 80rem
+  right: 5rem
+// ------ Главная новость ------
+.main
+  display: flex
+  flex-direction: column
+  max-width: 1130px
+  margin-top: 6rem
+  box-shadow: 22px 27px 95px rgba(0, 0, 0, 0.03)
+  background-color: #fff
+  &-img // ------ картинка новости ------
+    min-height: 425px
+    background-image: url(../img/block-img.png)
+    background-repeat: no-repeat
+  &-content // ------ отступы содержимого ------
+    padding-left: 4rem
+    padding-right: 4rem
+    padding-bottom: 4rem
+  &-details // позиционнирование контента
+    display: flex
+    justify-content: space-between
+  &-share // ------ верний отступ ссылки ------
+    padding-top: 1.4rem
+    .share // ------ цвет ссылки ------
+      color: #000000
+      font-weight: bold
+  &-info // ------ хлебные крошки ------
+    margin-top: 4rem
+    color: #a4acaf
+    font-size: 1.4rem
+  .views
+    padding-right: 3rem
+  &-text // ------ текст новости ------
+    font-size: 1.8em
+    color: #a4acaf  
+// ------ списки социальных сетей ------
+.social
+  display: flex
+  list-style-type: none
+  padding: 0
+  .social-link // ------ социальная ссылка ------
+    padding-right: 1rem
+
+// ------ заголовок секции ------
+.section-title
+  padding-top: 10rem
+  font-size: 2.4rem
+
+// ------ обертка новости ------
+.component
+  position: relative
+  margin-top: 10rem
+  display: flex
+  &-img // ------ изображение новости
+    box-shadow: 16px 19px 50px rgba(0, 0, 0, 0.38)
+    &::after
+      display: block
+      content: ''
+      width: 100%
+      height: 100vh
+      position: absolute 
+      top: -6rem
+      left: -6rem    
+      background: url(../img/section-layer.png) top left no-repeat
+      z-index: -1
+  &-content // ------ содержание новости ------
+    display: flex
+    flex-direction: column
+    padding-left: 7rem
+    .share // ------ стили ссылки:Поделиться ------
+      font-weight: bold
+      color: #000
+    .social // ------ отступ списка соц.сетей ------
+      padding-bottom: 2rem  
+  &-title // ------ заголовок новости ------
+    font-size: 2rem
+    text-transform: uppercase  
+  &-text // ------ текст новости ------
+    font-size: 1.6rem
+  &-more // ------ позиционнирование кнопки и плюса
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+// 
+.row-reverse
+  position: relative
+  flex-direction: row-reverse
+.reverse-content
+  position: relative
+  padding-left: 0
+  padding-right: 7rem
+.img-reverse
+  &::after
+    top: 1rem
+    right: 1rem
+.social-reverse
+  justify-content: flex-end
+  .social-link
+    padding-right: 0
+    padding-left: 1rem
+.reverse
+  text-align: right
+
+.btn // ------ Стилизация кнопки ------
+  max-width: 19.5rem
+  display: flex
+  position: relative
+  margin-top: 3rem
+  font-size: 1.8rem
+  font-weight: 700
+  text-transform: uppercase
+  color: #ffffff
+  padding: 1.5rem 4rem
+  border: none
+  background-color: #b29353
+  box-shadow: 6px 8px 40px rgba(0, 0, 0, 0.35)
+  &::before
+    content: ''
+    position: absolute
+    top: -0rem
+    left: -2.5rem
+    border-top: 82px solid #b29353
+    border-left: 40px solid transparent
+  &::after
+    content: ''
+    position: absolute
+    top: -0rem
+    left: 19.5rem
+    border-bottom: 81px solid #b29353
+    border-right: 40px solid transparent  
+
+// ------ Стилизация плюса ------
+.plus
+  margin-top: 6rem
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 2rem
+  height: 2rem
+  font-size: 2rem
+  font-weight: bold
+  color: #fff
+  background-color: #b29353
+
